@@ -5,222 +5,240 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Safira Furniture</title>
+    <!-- Link ke Bootstrap Icons untuk ikon-ikon yang digunakan dalam navigasi -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Link ke file CSS Bootstrap untuk styling umum -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
+        /* Styling umum untuk body halaman */
         body {
-            font-family: 'Arial, sans-serif';
-            background-color: #f7f7f7;
-            margin: 0;
-            padding: 0;
-            color: #333;
+            font-family: 'Arial, sans-serif'; /* Menentukan jenis font untuk seluruh halaman */
+            background-color: #f7f7f7; /* Warna latar belakang */
+            margin: 0; /* Menghapus margin default */
+            padding: 0; /* Menghapus padding default */
+            color: #333; /* Warna teks */
         }
 
+        /* Styling khusus untuk navbar */
         .navbar-custom {
-            background-color: #444444;
-            padding: 1rem 0;
-            width: 100%;
-            border-bottom: 2px solid #000000;
-            margin-bottom: 30px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            background-color: #444444; /* Warna latar belakang navbar */
+            padding: 1rem 0; /* Padding vertikal navbar */
+            width: 100%; /* Lebar penuh */
+            border-bottom: 2px solid #000000; /* Garis bawah navbar */
+            margin-bottom: 30px; /* Jarak bawah navbar */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Bayangan navbar */
         }
 
         .navbar-brand {
-            display: flex;
-            align-items: center;
-            color: #ffffff;
-            font-size: 1.5rem;
-            font-weight: bold;
-            text-decoration: none;
+            display: flex; /* Menampilkan logo dan teks secara horizontal */
+            align-items: center; /* Vertikal center terhadap logo */
+            color: #ffffff; /* Warna teks */
+            font-size: 1.5rem; /* Ukuran font */
+            font-weight: bold; /* Tebal font */
+            text-decoration: none; /* Menghapus garis bawah teks */
         }
 
         .navbar-brand img {
-            max-height: 50px;
-            margin-right: 10px;
+            max-height: 50px; /* Maksimum tinggi logo */
+            margin-right: 10px; /* Jarak antara logo dan teks */
         }
 
+        /* Styling untuk container pencarian */
         .search-container {
-            position: relative;
-            display: flex;
-            align-items: center;
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
+            position: relative; /* Mengatur posisi relatif untuk elemen di dalamnya */
+            display: flex; /* Menampilkan elemen secara horizontal */
+            align-items: center; /* Vertikal center */
+            width: 100%; /* Lebar penuh */
+            max-width: 800px; /* Lebar maksimum */
+            margin: 0 auto; /* Centering container secara horizontal */
         }
 
         .search-bar {
-            background-color: #ffffff;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            width: 100%;
-            padding-left: 2rem;
+            background-color: #ffffff; /* Warna latar belakang bilah pencarian */
+            border: none; /* Menghapus border default */
+            padding: 0.5rem 1rem; /* Padding bilah pencarian */
+            border-radius: 5px; /* Membuat sudut membulat */
+            width: 100%; /* Lebar penuh */
+            padding-left: 2rem; /* Padding kiri untuk ruang ikon pencarian */
         }
 
         .search-icon {
-            position: absolute;
-            left: 10px;
-            font-size: 1.2rem;
-            color: #888888;
+            position: absolute; /* Posisi absolut untuk ikon pencarian */
+            left: 10px; /* Jarak dari kiri */
+            font-size: 1.2rem; /* Ukuran font ikon pencarian */
+            color: #888888; /* Warna ikon pencarian */
         }
 
         .search-btn {
-            background-color: #000000;
-            color: white;
-            border-radius: 5px;
-            padding: 0.5rem 1rem;
-            border: none;
-            margin-left: 10px;
+            background-color: #000000; /* Warna latar belakang tombol pencarian */
+            color: white; /* Warna teks tombol */
+            border-radius: 5px; /* Membuat sudut membulat */
+            padding: 0.5rem 1rem; /* Padding tombol pencarian */
+            border: none; /* Menghapus border default */
+            margin-left: 10px; /* Jarak dari bilah pencarian */
         }
 
         .cart-icon {
-            font-size: 1.7rem;
-            color: #ffffff;
-            margin-left: 10px;
+            font-size: 1.7rem; /* Ukuran font ikon keranjang */
+            color: #ffffff; /* Warna ikon keranjang */
+            margin-left: 10px; /* Jarak dari tombol pencarian */
+        }
+
+        /* Styling untuk menu dropdown profil */
+        .dropdown {
+            margin-left: 10px; /* Jarak dari ikon keranjang */
+        }
+
+        .dropdown-menu {
+            right: 0; /* Posisi menu dropdown di sisi kanan */
         }
 
         .navbar-nav {
-            display: flex;
-            list-style: none;
-            padding-left: 0;
-            margin: 0;
-            justify-content: center;
-            flex-grow: 1;
-            width: 100%;
+            display: flex; /* Menampilkan item navigasi secara horizontal */
+            list-style: none; /* Menghapus bullet points dari item navigasi */
+            padding-left: 0; /* Menghapus padding default */
+            margin: 0; /* Menghapus margin default */
+            justify-content: center; /* Centering item navigasi secara horizontal */
+            flex-grow: 1; /* Membuat navbar-nav fleksibel */
+            width: 100%; /* Lebar penuh */
         }
 
         .navbar-nav .nav-item {
-            margin-right: 20px;
+            margin-right: 20px; /* Jarak antara item navigasi */
         }
 
         .navbar-nav .nav-link {
-            color: #ffffff !important;
-            padding: 0.5rem 0.75rem;
-            transition: background-color 0.3s, color 0.3s;
-            border-radius: 5px;
-            text-decoration: none;
+            color: #ffffff !important; /* Warna teks link navigasi */
+            padding: 0.5rem 0.75rem; /* Padding link navigasi */
+            transition: background-color 0.3s, color 0.3s; /* Transisi warna latar belakang dan teks */
+            border-radius: 5px; /* Membuat sudut membulat */
+            text-decoration: none; /* Menghapus garis bawah teks link */
         }
 
         .navbar-nav .nav-link:hover {
-            background-color: #ffffff6d;
-            color: #444444;
+            background-color: #ffffff6d; /* Warna latar belakang saat hover */
+            color: #444444; /* Warna teks saat hover */
         }
 
+        /* Styling untuk container utama */
         .main-container {
-            width: 100%;
-            max-width: 1200px;
-            background-color: #ffffff;
-            margin-bottom: 20px;
-            padding: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
+            width: 100%; /* Lebar penuh */
+            max-width: 1200px; /* Lebar maksimum */
+            background-color: #ffffff; /* Warna latar belakang */
+            margin-bottom: 20px; /* Jarak bawah container */
+            padding: 20px; /* Padding container */
+            display: flex; /* Menampilkan elemen secara horizontal */
+            align-items: center; /* Vertikal center */
+            justify-content: space-between; /* Jarak antar elemen */
+            flex-wrap: wrap; /* Membungkus elemen jika perlu */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Bayangan container */
+            border-radius: 10px; /* Membuat sudut membulat */
         }
 
         .text-section {
-            flex: 1;
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            margin-right: 0px;
+            flex: 1; /* Fleksibilitas section teks */
+            padding: 40px; /* Padding section teks */
+            display: flex; /* Menampilkan elemen secara vertikal */
+            flex-direction: column; /* Mengatur arah elemen ke bawah */
+            justify-content: center; /* Vertikal center */
+            margin-right: 0px; /* Jarak kanan */
         }
 
         .text-section h1 {
-            font-size: 48px;
-            line-height: 1.2;
-            margin: 0;
-            color: #333;
+            font-size: 48px; /* Ukuran font untuk heading 1 */
+            line-height: 1.2; /* Jarak antara baris teks */
+            margin: 0; /* Menghapus margin default */
+            color: #333; /* Warna teks */
         }
 
         .text-section h2 {
-            font-size: 32px;
-            margin: 10px 0;
-            font-weight: 300;
-            color: #555;
+            font-size: 32px; /* Ukuran font untuk heading 2 */
+            margin: 10px 0; /* Margin atas dan bawah heading 2 */
+            font-weight: 300; /* Ketebalan font */
+            color: #555; /* Warna teks */
         }
 
         .text-section .underline {
-            width: 100px;
-            height: 2px;
-            background-color: #000000;
-            margin: 20px 0;
+            width: 100px; /* Lebar garis bawah */
+            height: 2px; /* Tinggi garis bawah */
+            background-color: #000000; /* Warna garis bawah */
+            margin: 20px 0; /* Margin atas dan bawah garis bawah */
         }
 
         .text-section .info {
-            margin-top: 20px;
+            margin-top: 20px; /* Jarak atas info */
         }
 
         .text-section .info p {
-            margin: 5px 0;
-            font-size: 18px;
+            margin: 5px 0; /* Margin atas dan bawah paragraf info */
+            font-size: 18px; /* Ukuran font paragraf info */
         }
 
+        /* Styling untuk section gambar */
         .image-section {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-left: 20px;
+            flex: 1; /* Fleksibilitas section gambar */
+            display: flex; /* Menampilkan elemen secara horizontal */
+            justify-content: center; /* Centering gambar */
+            align-items: center; /* Vertikal center */
+            margin-left: 20px; /* Jarak kiri */
         }
 
         .image-section img {
-            width: 100%;
-            max-width: 400px;
-            border: 5px solid #000000;
-            border-radius: 5px;
+            width: 100%; /* Lebar gambar */
+            max-width: 400px; /* Lebar maksimum gambar */
+            border: 5px solid #000000; /* Border gambar */
+            border-radius: 5px; /* Membuat sudut membulat gambar */
         }
 
         .about-text {
-            font-size: 18px;
-            line-height: 1.6;
-            margin-top: 20px;
-            text-align: left;
+            font-size: 18px; /* Ukuran font untuk teks tentang */
+            line-height: 1.6; /* Jarak antara baris teks */
+            margin-top: 20px; /* Jarak atas teks tentang */
+            text-align: left; /* Perataan teks ke kiri */
         }
 
+        /* Styling untuk responsif pada perangkat kecil */
         @media (max-width: 768px) {
             .main-container {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
+                flex-direction: column; /* Mengatur elemen ke arah vertikal pada perangkat kecil */
+                align-items: center; /* Centering elemen */
+                text-align: center; /* Perataan teks ke tengah */
             }
 
             .text-section {
-                margin-right: 0;
-                padding: 20px;
+                margin-right: 0; /* Menghapus margin kanan pada perangkat kecil */
+                padding: 20px; /* Padding section teks pada perangkat kecil */
             }
 
             .image-section {
-                margin-left: 0;
-                margin-top: 20px;
+                margin-left: 0; /* Menghapus margin kiri pada perangkat kecil */
+                margin-top: 20px; /* Jarak atas gambar pada perangkat kecil */
             }
 
             .image-section img {
-                width: 80%;
-                max-width: 300px;
+                width: 80%; /* Lebar gambar pada perangkat kecil */
+                max-width: 300px; /* Lebar maksimum gambar pada perangkat kecil */
             }
 
             .search-container {
-                margin-left: 0;
-                margin-right: 0;
+                margin-left: 0; /* Menghapus margin kiri pada perangkat kecil */
+                margin-right: 0; /* Menghapus margin kanan pada perangkat kecil */
             }
         }
 
+        /* Styling untuk footer */
         .footer {
-            width: 100%;
-            background-color: #444444;
-            text-align: center;
-            padding: 1rem 0;
-            margin-top: 20px;
-            color: #ffffff;
-            border-top: 2px solid #000000;
+            width: 100%; /* Lebar penuh */
+            background-color: #444444; /* Warna latar belakang footer */
+            text-align: center; /* Perataan teks ke tengah */
+            padding: 1rem 0; /* Padding footer */
+            margin-top: 20px; /* Jarak atas footer */
+            color: #ffffff; /* Warna teks footer */
+            border-top: 2px solid #000000; /* Garis atas footer */
         }
 
         .footer p {
-            margin: 0;
+            margin: 0; /* Menghapus margin default pada paragraf footer */
         }
     </style>
 </head>
@@ -230,50 +248,76 @@
     <nav class="navbar navbar-custom">
         <!-- Brand Logo and Title -->
         <a class="navbar-brand" href="#">
-            <img src="logo_safira.jpg.png" alt="Brand Logo">
-            <span>SAFIRA.DECO</span>
+            <img src="logo_safira.jpg.png" alt="Brand Logo"> <!-- Logo Brand -->
+            <span>SAFIRA.DECO</span> <!-- Nama Brand -->
         </a>
 
         <!-- Search Bar with Icon -->
         <div class="search-container">
-            <i class="bi bi-search search-icon"></i>
-            <input class="form-control search-bar" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn search-btn" type="submit">Search</button>
-            <a href="#" class="cart-icon">
-                <i class="bi bi-cart"></i>
+            <i class="bi bi-search search-icon"></i> <!-- Ikon pencarian -->
+            <input class="form-control search-bar" type="search" placeholder="Search" aria-label="Search"> <!-- Bilah pencarian -->
+            <button class="btn search-btn" type="submit">Search</button> <!-- Tombol pencarian -->
+            <a href="keranjang.html" class="cart-icon">
+                <i class="bi bi-cart"></i> <!-- Ikon keranjang -->
             </a>
             <!-- Profile Icon with Dropdown -->
             <div class="dropdown ml-2">
                 <a href="#" role="button" id="profileDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="bi bi-person-circle" style="font-size: 1.7rem; color: #ffffff;"></i>
+                    <i class="bi bi-person-circle" style="font-size: 1.7rem; color: #ffffff;"></i> <!-- Ikon profil dengan dropdown -->
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="profileDropdown">
-                    <a class="dropdown-item" href="safira_profil.html">Info Akun</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="index.html">Logout</a>
+                    <a class="dropdown-item" href="safira_profil.html">Info Akun</a> <!-- Item menu dropdown: Info Akun -->
+                    <div class="dropdown-divider"></div> <!-- Pembatas menu dropdown -->
+                    <a class="dropdown-item" href="index.html">Logout</a> <!-- Item menu dropdown: Logout -->
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- Navigation Links -->
+     <!--class="navbar-toggler": Kelas dari Bootstrap untuk membuat tombol 
+     toggle yang muncul pada perangkat kecil. Ini adalah elemen yang pengguna klik untuk 
+     membuka atau menutup menu navbar.
+type="button": Menentukan bahwa tombol ini adalah tombol biasa (bukan tombol submit).
+data-toggle="collapse": Menandakan bahwa tombol ini digunakan untuk menyembunyikan atau
+ menampilkan elemen yang collapsible (dapat dilipat).
+data-target="#navbarNav": Mengatur ID dari elemen yang akan dipengaruhi oleh tombol ini, 
+yaitu elemen dengan ID navbarNav. Tombol toggle ini akan mengontrol visibilitas elemen dengan ID tersebut.
+aria-controls="navbarNav": Menyediakan aksesibilitas dengan memberi tahu screen reader bahwa tombol ini 
+mengontrol elemen dengan ID navbarNav.
+aria-expanded="false": Menunjukkan bahwa elemen dengan ID navbarNav saat ini tidak diperluas (collapsed).
+<span class="navbar-toggler-icon"></span>:
+
+Elemen ini biasanya berisi ikon garis tiga (hamburger) yang menunjukkan tombol toggle. Ikon ini biasanya 
+diatur melalui CSS atau menggunakan font ikon seperti Font Awesome atau Bootstrap Icons.
+<div class="collapse navbar-collapse" id="navbarNav">:
+
+class="collapse navbar-collapse": Mengatur elemen ini untuk menjadi collapsible (dapat dilipat) pada layar 
+kecil dan menyusut menjadi sebuah dropdown ketika tombol toggle diklik.
+id="navbarNav": ID ini digunakan sebagai referensi untuk tombol toggle. Elemen ini akan dibuka atau ditutup 
+berdasarkan aksi dari tombol toggle.
+<ul class="navbar-nav mx-auto">:
+
+class="navbar-nav": Kelas dari Bootstrap untuk mengatur item navbar dalam sebuah daftar yang terstruktur.
+mx-auto: Kelas dari Bootstrap untuk mengatur margin otomatis di kiri dan kanan, yang memusatkan item navbar.-->
     <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <!--Navbar toggle adalah elemen yang muncul ketika layar diperkecil.-->
+            <span class="navbar-toggler-icon"></span> <!-- Ikon toggle untuk navbar pada perangkat kecil -->
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" href="safira_index.html">Home</a>
+                    <a class="nav-link active" href="safira_index.html">Home</a> <!-- Link ke halaman Home -->
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="safira_produk.html">Produk</a>
+                    <a class="nav-link" href="safira_produk.html">Produk</a> <!-- Link ke halaman Produk -->
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="safira_pesanansaya.html">Pesanan Saya</a>
+                    <a class="nav-link" href="safira_pesanansaya.html">Pesanan Saya</a> <!-- Link ke halaman Pesanan Saya -->
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="safira_kontak.html">Kontak Toko</a>
+                    <a class="nav-link" href="safira_kontak.html">Kontak Toko</a> <!-- Link ke halaman Kontak Toko -->
                 </li>
             </ul>
         </div>
@@ -283,33 +327,32 @@
     <div class="main-container">
         <!-- Text Section -->
         <div class="text-section">
-            <h1>SAFIRA.DECO</h1>
-            <h2>FURNITURE</h2>
-            <div class="underline"></div>
+            <h1>SAFIRA.DECO</h1> <!-- Heading utama -->
+            <h2>FURNITURE</h2> <!-- Subheading -->
+            <div class="underline"></div> <!-- Garis bawah heading -->
             <div class="info">
-                <p>FOUNDER+</p>
-                <p>SASKIA-WIDIYA-FARIDA</p>
+                <p>FOUNDER+</p> <!-- Informasi tentang pendiri -->
+                <p>SASKIA-WIDIYA-FARIDA</p> <!-- Nama pendiri -->
             </div>
             <p class="about-text">
                 Safira Furniture adalah toko yang menyediakan berbagai jenis furnitur berkualitas dengan desain modern dan klasik. Kami mengutamakan kualitas dan kepuasan pelanggan dengan menawarkan produk-produk terbaik untuk melengkapi rumah Anda.
-            </p>
+            </p> <!-- Deskripsi tentang Safira Furniture -->
         </div>
         <!-- Image Section -->
         <div class="image-section">
-            <img src="logo_safira.jpg.png" alt="safira_produk">
+            <img src="logo_safira.jpg.png" alt="safira_produk"> <!-- Gambar logok -->
         </div>
     </div>
 
     <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2024 Safira Furniture. All rights reserved.</p>
+        <p>&copy; 2024 Safira Furniture. All rights reserved.</p> <!-- Informasi hak cipta -->
     </footer>
 
     <!-- Script Links -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> <!-- Link ke file JavaScript jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script> <!-- Link ke file JavaScript Popper.js -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> <!-- Link ke file JavaScript Bootstrap -->
 </body>
 
 </html>
-
