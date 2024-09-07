@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keranjang Belanja - Safira Furniture</title>
+
+    <!-- Memuat ikon Bootstrap untuk penggunaan ikon di situs -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Memuat CSS Bootstrap untuk penggunaan komponen-komponen yang ada -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- CSS kustom untuk memperindah tampilan halaman -->
+    <style>
+        /* Gaya dasar untuk seluruh halaman */
+        body {
+            font-family: 'Arial, sans-serif';
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            color: #444444;
+        }
+
+        /* Gaya untuk navbar */
+        .navbar {
+            background-color: #444444;
+            padding: 0.1rem;
+        }
+
+        .navbar-brand {
+            color: #ffffff;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .navbar-brand img {
+            max-height: 50px;
+            margin-right: 10px;
+        }
+
+        .navbar-nav .nav-link {
+            color: #ffffff !important;
+            padding: 0.75rem 1rem;
+            transition: background-color 0.3s, color 0.3s;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .navbar-nav .nav-link:hover {
+            background-color: #ffffff6d;
+            color: #444444;
+        }
+
+        /* Gaya untuk kontainer keranjang */
+        .cart-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+            margin-top: 30px;
+        }
+
+        /* Gaya untuk tabel keranjang */
+        .cart-table {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .cart-table th,
+        .cart-table td {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .cart-table th {
+            background-color: #f0f0f0;
+            color: #444;
+        }
+
+        .cart-table td img {
+            max-width: 100px;
+        }
+
+        .cart-table td .quantity {
+            width: 50px;
+            text-align: center;
+        }
+
+        .cart-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .cart-actions .btn {
+            padding: 10px 20px;
+        }
+
+        /* Gaya untuk footer */
+        .footer {
+            width: 100%;
+            background-color: #444444;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 40px;
+            color: #ffffff;
+            border-top: 2px solid #000000;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-custom">
+        <a class="navbar-brand" href="#">
+            <img src="logo_safira.jpg.png" alt="Brand Logo">
+            <span>SAFIRA.DECO</span>
+        </a>
+    </nav>
+
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="safira_index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="safira_produk.html">Produk</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="safira_pesanansaya.html">Pesanan Saya</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="safira_kontak.html">Kontak Toko</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Kontainer Keranjang -->
+    <div class="cart-container">
+        <h2>Keranjang Belanja</h2>
+        <table class="cart-table table table-bordered">
+            <thead>
+                <tr>
+                    <th>Produk</th>
+                    <th>Harga</th>
+                    <th>Jumlah</th>
+                    <th>Total</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Baris contoh produk -->
+                <tr>
+                    <td>
+                        <img src="Majestic_Java.jpeg" alt="Produk 1">
+                        <p>Majestic Java</p>
+                    </td>
+                    <td>Rp 3.000.000</td>
+                    <td><input type="number" class="quantity" value="1"></td>
+                    <td>Rp 3.000.000</td>
+                    <td>
+                        <button class="btn btn-danger">Hapus</button>
+                    </td>
+                </tr>
+                <!-- Baris produk kedua -->
+                <tr>
+                    <td>
+                        <img src="Lumière_Java.jpeg" alt="Produk 2">
+                        <p>Lumière_Java</p>
+                    </td>
+                    <td>Rp 1.800.000</td>
+                    <td><input type="number" class="quantity" value="1"></td>
+                    <td>Rp 1.800.000</td>
+                    <td>
+                        <button class="btn btn-danger">Hapus</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="cart-actions">
+            <a href="safira_produk.html" class="btn btn-secondary">Lanjutkan Belanja</a>
+            <a href="safira_checkout.html" class="btn btn-primary">Lanjutkan ke Pembayaran</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Safira Furniture. All rights reserved.</p>
+    </footer>
+
+    <!-- Memuat pustaka JavaScript dari jQuery, Popper.js, dan Bootstrap untuk interaktivitas -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
