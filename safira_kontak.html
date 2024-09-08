@@ -2,110 +2,150 @@
 <html lang="en">
 
 <head>
+    <!-- Definisi karakter dan pengaturan viewport untuk responsive design -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kontak Kami - Safira Furniture</title>
+    
+    <!-- Memuat ikon Bootstrap untuk penggunaan ikon di situs -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Memuat CSS Bootstrap untuk penggunaan komponen-komponen yang ada -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- CSS kustom untuk memperindah tampilan halaman -->
     <style>
+        /* Gaya dasar untuk seluruh halaman */
         body {
             font-family: 'Arial, sans-serif';
-            background-color: #f7f7f7;
-            margin: 0;
-            padding: 0;
-            color: #444444;
+            background-color: #f7f7f7; /* Warna latar belakang abu-abu muda */
+            margin: 0; /* Menghapus margin default */
+            padding: 0; /* Menghapus padding default */
+            color: #444444; /* Warna teks default */
         }
 
+        /* Gaya untuk navbar */
         .navbar {
-            background-color: #444444;
-            padding: 0.1rem;
+            background-color: #444444; /* Warna latar belakang navbar */
+            padding: 0.1rem; /* Padding vertikal kecil */
         }
 
+        /* Gaya untuk nama brand di navbar */
         .navbar-brand {
-            color: #ffffff;
-            font-size: 1.5rem;
-            font-weight: bold;
+            color: #ffffff; /* Warna teks putih */
+            font-size: 1.5rem; /* Ukuran font lebih besar */
+            font-weight: bold; /* Membuat teks tebal */
         }
+
+        /* Gaya untuk gambar logo di navbar */
         .navbar-brand img {
-            max-height: 50px;
-            margin-right: 10px;
+            max-height: 50px; /* Mengatur tinggi maksimum gambar */
+            margin-right: 10px; /* Memberi jarak antara gambar dan teks */
         }
 
-
+        /* Gaya untuk link di navbar */
         .navbar-nav .nav-link {
-            color: #ffffff !important;
-            padding: 0.75rem 1rem;
-            transition: background-color 0.3s, color 0.3s;
-            border-radius: 5px;
-            text-decoration: none;
+            color: #ffffff !important; /* Warna teks putih */
+            padding: 0.75rem 1rem; /* Padding pada link */
+            transition: background-color 0.3s, color 0.3s; /* Efek transisi pada hover */
+            border-radius: 5px; /* Membuat sudut membulat pada link */
+            text-decoration: none; /* Menghapus garis bawah link */
         }
 
+        /* Gaya saat link di-hover */
         .navbar-nav .nav-link:hover {
-            background-color: #ffffff6d;
-            color: #444444;
+            background-color: #ffffff6d; /* Warna latar belakang saat hover */
+            color: #444444; /* Warna teks saat hover */
         }
 
+        /* Gaya untuk container kontak */
         .contact-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-            text-align: center;
-            margin-top: 30px;
+            max-width: 800px; /* Lebar maksimal container */
+            margin: 0 auto; /* Tengah halaman */
+            padding: 40px 20px; /* Padding dalam container */
+            background-color: #ffffff; /* Warna latar belakang putih */
+            border-radius: 10px; /* Membuat sudut container membulat */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05); /* Efek bayangan */
+            text-align: center; /* Teks rata tengah */
+            margin-top: 30px; /* Jarak dari atas halaman */
         }
 
+        /* Gaya untuk judul dan teks */
         h2 {
-            font-size: 2rem;
-            color: #444444;
-            margin-bottom: 20px;
+            font-size: 2rem; /* Ukuran font besar untuk judul */
+            color: #444444; /* Warna teks judul */
+            margin-bottom: 20px; /* Jarak bawah dari elemen lainnya */
         }
 
         p {
-            font-size: 1rem;
-            color: #555;
-            margin-bottom: 20px;
-            line-height: 1.6;
+            font-size: 1rem; /* Ukuran font standar */
+            color: #555; /* Warna teks abu-abu */
+            margin-bottom: 20px; /* Jarak bawah setiap paragraf */
+            line-height: 1.6; /* Jarak antar baris */
         }
 
+        /* Gaya untuk informasi kontak */
         .contact-info {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 30px;
+            display: flex; /* Flexbox untuk tata letak horizontal */
+            justify-content: space-around; /* Membagi jarak antar item */
+            margin-top: 30px; /* Jarak atas dari elemen sebelumnya */
         }
 
+        /* Gaya untuk setiap blok informasi kontak */
         .contact-info div {
-            flex: 1;
-            text-align: center;
-            padding: 10px;
+            flex: 1; /* Setiap item mengambil ruang yang sama */
+            text-align: center; /* Teks rata tengah */
+            padding: 10px; /* Padding dalam blok */
         }
 
+        /* Gaya untuk ikon informasi kontak */
         .contact-info i {
-            font-size: 2rem;
-            color: #444;
-            margin-bottom: 10px;
+            font-size: 2rem; /* Ukuran ikon besar */
+            color: #444; /* Warna ikon */
+            margin-bottom: 10px; /* Jarak bawah dari teks */
         }
 
+        /* Gaya untuk teks di bawah ikon */
         .contact-info span {
-            display: block;
-            font-size: 1rem;
-            color: #555;
-            margin-top: 10px;
+            display: block; /* Menampilkan teks sebagai blok */
+            font-size: 1rem; /* Ukuran font standar */
+            color: #555; /* Warna teks abu-abu */
+            margin-top: 10px; /* Jarak atas dari ikon */
         }
 
+        /* Gaya khusus untuk tautan WhatsApp, Email, dan Alamat */
+        .contact-info a {
+            flex: 1; /* Setiap item mengambil ruang yang sama */
+    max-width: 250px; /* Lebar maksimum untuk tiap kolom */
+            display: inline-block; /* Membuat tautan sebagai blok untuk padding */
+            padding: 10px; /* Padding dalam blok */
+            color: #444444; /* Warna teks default */
+            text-decoration: none; /* Menghapus garis bawah pada tautan */
+            border: 2px solid #444444; /* Membuat kotak di sekeliling tautan */
+            border-radius: 5px; /* Membuat sudut kotak membulat */
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Efek transisi */
+        }
+
+        /* Gaya saat tautan di-hover */
+        .contact-info a:hover {
+            background-color: #444444; /* Warna latar belakang saat hover */
+            color: #ffffff; /* Warna teks saat hover */
+            border-color: #ffffff; /* Warna border saat hover */
+        }
+
+        /* Gaya untuk footer */
         .footer {
-            width: 100%;
-            background-color: #444444;
-            text-align: center;
-            padding: 1rem 0;
-            margin-top: 40px;
-            color: #ffffff;
-            border-top: 2px solid #000000;
+            width: 100%; /* Lebar penuh */
+            background-color: #444444; /* Warna latar belakang abu-abu gelap */
+            text-align: center; /* Teks rata tengah */
+            padding: 1rem 0; /* Padding atas dan bawah */
+            margin-top: 40px; /* Jarak atas footer dari konten lainnya */
+            color: #ffffff; /* Warna teks putih */
+            border-top: 2px solid #000000; /* Garis atas footer */
         }
 
+        /* Gaya untuk paragraf dalam footer */
         .footer p {
-            margin: 0;
+            margin: 0; /* Menghapus margin default */
         }
     </style>
 </head>
@@ -113,15 +153,14 @@
 <body>
     <!-- Header dan Navbar -->
     <nav class="navbar navbar-custom">
-        <!-- Brand Logo and Title -->
+        <!-- Brand Logo dan Judul -->
         <a class="navbar-brand" href="#">
             <img src="logo_safira.jpg.png" alt="Brand Logo">
             <span>SAFIRA.DECO</span>
         </a>
-
     </nav>
 
-    <!-- Navigation Links -->
+    <!-- Tautan Navigasi -->
     <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -150,30 +189,36 @@
         <p>Jika Anda memiliki pertanyaan atau memerlukan bantuan, jangan ragu untuk menghubungi kami melalui salah satu cara di bawah ini. Kami siap membantu Anda!</p>
 
         <div class="contact-info">
+            <!-- Blok informasi kontak telepon -->
             <div>
-                <i class="bi bi-telephone-fill"></i>
-                <span>+62 895-0686-1620</span>
+                <i class="bi bi-telephone-fill"></i> <!-- Ikon telepon -->
+                <span><a href="https://wa.me/+6289506861620" target="_blank" class="wa-link">+62 895-0686-1620</a></span> <!-- Tautan WhatsApp -->
             </div>
+
+            <!-- Blok informasi kontak email -->
             <div>
-                <i class="bi bi-envelope-fill"></i>
-                <span>info@safirafurniture.com</span>
+                <i class="bi bi-envelope-fill"></i> <!-- Ikon email -->
+                <span><a href="mailto:ayuwidyhawati@gmail.com" target="_blank" class="wa-link">safirafurniture@gmail.com</a></span> <!-- Tautan Email -->
             </div>
+
+            <!-- Blok informasi alamat -->
             <div>
-                <i class="bi bi-geo-alt-fill"></i>
-                <span>Jl. Pancur, Pelemkerep, Jepara</span>
+                <i class="bi bi-geo-alt-fill"></i> <!-- Ikon lokasi -->
+                <span><a href="https://maps.app.goo.gl/k3U35QmpncZRyuYB9" target="_blank">Jl. Pancur, Pelemkerep, Jepara</a></span> <!-- Tautan Alamat -->
             </div>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2024 Safira Furniture. All rights reserved.</p>
-    </footer>
-
+    <div class="footer">
+        <p>&copy; 2023 Safira Deco. All rights reserved.</p>
+    </div>
+    
+    <!-- Memuat JavaScript Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
+
 
